@@ -1,17 +1,18 @@
 #include <iostream>
 using namespace std;
 
-void insertion(int size, int arr[])
+void insertion(int &size, int arr[])
 {
     int Element;
     cout << "enter the Element you want to insert at Biggining : ";
     cin >> Element;
-    size++;
-    for (int i = 0; i < size; i++)
+
+    for (int i = size; i > 0; i--)
     {
-        arr[i + 1] = arr[i];
+        arr[i] = arr[i - 1];
     }
     arr[0] = Element;
+    size++;
 }
 
 void display(int size, int arr[])
